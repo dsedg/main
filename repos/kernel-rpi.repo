@@ -1,0 +1,23 @@
+[kernel-rpi]
+name=Copr repo for kernel-rpi owned by dwrobel
+baseurl=https://download.copr.fedorainfracloud.org/results/dwrobel/kernel-rpi/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/dwrobel/kernel-rpi/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+priority=50
+
+[updates-testing-kernel-rpi]
+name=Copr repo for kernel-rpi-testing owned by dwrobel
+baseurl=https://download.copr.fedorainfracloud.org/results/dwrobel/kernel-rpi-testing/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/dwrobel/kernel-rpi-testing/pubkey.gpg
+repo_gpgcheck=0
+enabled=0
+enabled_metadata=1
+priority=50
