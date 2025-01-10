@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         fedora_version:
-          - ${{ inputs.fedora_version }}
+          - 41
         image_name:
           - silverblue
           - kinoite
@@ -145,7 +145,7 @@ jobs:
           command: |
             # pull the base image used for FROM in containerfile so
             # we can retry on that unfortunately common failure case
-            podman pull quay.io/${{ env.SOURCE_ORG }}/${{ env.SOURCE_IMAGE }}:${{ matrix.fedora_version }}
+            podman pull quay.io/fedora/fedora-iot:41 
 
       # Generate image metadata
       - name: Image Metadata
