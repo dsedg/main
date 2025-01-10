@@ -9,8 +9,12 @@ COPY / /
 
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION}
 COPY repos/* /etc/yum.repos.d/
+
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     --mount=type=bind,from=ctx,src=/,dst=/ctx \
+    rm -f /usr/bin/chsh && \
+    rm -f /usr/bin/lchsh && \
+    mkdir -p /var/lib/alternatives && \
     /ctx/install-iot.sh && \
     /ctx/cleanup.sh && \
     ostree container commit && \
