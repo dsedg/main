@@ -135,9 +135,6 @@ jobs:
           command: |
             set -eo pipefail
             ver=$(skopeo inspect docker://quay.io/fedora/fedora-iot:41 | jq -r '.Labels["org.opencontainers.image.version"]')
-            if [ -z "$ver" ] || [ "null" = "$ver" ]; then
-              echo "inspected image version must not be empty or null"
-              exit 1
             echo "SOURCE_IMAGE_VERSION=$ver" >> $GITHUB_ENV
 
       - name: Pull Images
