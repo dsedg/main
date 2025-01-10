@@ -1,11 +1,5 @@
 name: build-fedora-iot
 on:
-  workflow_call:
-    inputs:
-      fedora_version:
-        description: "The Fedora release version: 39, 40, 41 etc"
-        required: true
-        type: string
 env:
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
